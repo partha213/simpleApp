@@ -1,0 +1,12 @@
+<div class="item-container">
+    <div *ngFor="let item of cartItems" class="item">
+        <p>{{item.itemDesc}}</p>
+        <small>{{item.itemCode}}</small>
+    </div>
+</div>
+<br/>
+
+<button (click)="loadItems()" *ngIf="cartItems.length == 0">Load Cart Items</button>
+<button (click)="emptyCart()" *ngIf="cartItems.length > 0">Empty Cart</button>
+
+<button (click)="proceedToPayment()" *ngIf="cartItems.length > 0">Proceed to payment</button>
